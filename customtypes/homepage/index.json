@@ -14,15 +14,15 @@
     "SEO & Metadata": {
       "meta_title": {
         "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
+          "label": "Sk8te",
+          "placeholder": "Sk8te website for creating custom boards"
         },
         "type": "Text"
       },
       "meta_description": {
         "config": {
-          "label": "Meta Description",
-          "placeholder": "A brief summary of the page"
+          "label": "Sk8te website for creating custom boards",
+          "placeholder": "Sk8te website for creating custom boards"
         },
         "type": "Text"
       },
