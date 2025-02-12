@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type HomepageDocumentDataSlicesSlice = never;
+type HomepageDocumentDataSlicesSlice = HeroSlice;
 
 /**
  * Content for Homepage documents
@@ -20,10 +20,10 @@ interface HomepageDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<HomepageDocumentDataSlicesSlice> /**
-   * Meta Title field in *Homepage*
+   * Sk8te field in *Homepage*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **Placeholder**: Sk8te website for creating custom boards
    * - **API ID Path**: homepage.meta_title
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
@@ -31,10 +31,10 @@ interface HomepageDocumentData {
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Homepage*
+   * Sk8te website for creating custom boards field in *Homepage*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: A brief summary of the page
+   * - **Placeholder**: Sk8te website for creating custom boards
    * - **API ID Path**: homepage.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
@@ -71,6 +71,33 @@ export type HomepageDocument<Lang extends string = string> =
 
 export type AllDocumentTypes = HomepageDocument;
 
+/**
+ * Default variation for Hero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *Hero*
+ */
+type HeroSliceVariation = HeroSliceDefault;
+
+/**
+ * Hero Shared Slice
+ *
+ * - **API ID**: `hero`
+ * - **Description**: Hero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -96,6 +123,9 @@ declare module "@prismicio/client" {
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      HeroSlice,
+      HeroSliceVariation,
+      HeroSliceDefault,
     };
   }
 }
