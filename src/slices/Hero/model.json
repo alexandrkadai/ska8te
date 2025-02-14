@@ -16,7 +16,7 @@
           "type": "StructuredText",
           "config": {
             "label": "Heading",
-            "placeholder": "",
+            "placeholder": "Escape the Reality",
             "allowTargetBlank": true,
             "multi": "heading1"
           }
