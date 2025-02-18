@@ -17,6 +17,10 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      fontFamily:{
+        bowlby:['var(--font-bowlby)'],
+        dmMono:['var(--font-dmmono)'],
+      }
     },
   },
   plugins: [fluid],
