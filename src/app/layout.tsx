@@ -3,14 +3,14 @@ import { Bowlby_One_SC, DM_Mono } from 'next/font/google';
 import './globals.css';
 
 const bowlby = Bowlby_One_SC({
-  variable: '--font-bowlby',
+  variable: '--font-bowlby-sc',
   subsets: ['latin'],
   display: 'swap',
   weight: '400',
 });
 
 const dmMono = DM_Mono({
-  variable: '--font-dmmono',
+  variable: '--font-dm-mono',
   subsets: ['latin'],
   display: 'swap',
   weight: '500',
