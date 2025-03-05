@@ -20,11 +20,15 @@ export async function generateMetadata(): Promise<Metadata> {
     title: page.data.meta_title,
     description: page.data.meta_description,
     openGraph: {
-      title: isFilled.keyText(page.data.meta_title) ? page.data.meta_title : undefined,
+      title: isFilled.keyText(page.data.meta_title)
+        ? page.data.meta_title
+        : undefined,
       description: isFilled.keyText(page.data.meta_description)
         ? page.data.meta_description
         : undefined,
-      images: isFilled.image(page.data.meta_image) ? [asImageSrc(page.data.meta_image)] : undefined,
+      images: isFilled.image(page.data.meta_image)
+        ? [asImageSrc(page.data.meta_image)]
+        : undefined,
     },
   };
 }

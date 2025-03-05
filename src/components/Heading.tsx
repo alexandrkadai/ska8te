@@ -7,7 +7,12 @@ type HeadingProps = {
   className?: string;
 };
 
-export function Heading({ as: Comp = 'h1', className, children, size = 'lg' }: HeadingProps) {
+export function Heading({
+  as: Comp = 'h1',
+  className,
+  children,
+  size = 'lg',
+}: HeadingProps) {
   return (
     <Comp
       className={clsx(
@@ -17,8 +22,9 @@ export function Heading({ as: Comp = 'h1', className, children, size = 'lg' }: H
         size === 'md' && '~text-3xl/5xl',
         size === 'sm' && '~text-2xl/4xl',
         size === 'xs' && '~text-lg/xl',
-        className,
-      )}>
+        className
+      )}
+    >
       {children}
     </Comp>
   );

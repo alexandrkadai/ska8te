@@ -29,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bowlby.variable} ${dmMono.variable} antialiased font-dmMono`}>
+      <body
+        className={`${bowlby.variable} ${dmMono.variable} font-dmMono antialiased`}
+      >
         <main>
           <Header />
           {children}
