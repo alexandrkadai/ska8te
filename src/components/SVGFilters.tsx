@@ -9,12 +9,14 @@ export function SVGFilters() {
               id="turbulence"
               numOctaves="2"
               result="noise"
-              seed={index}></feTurbulence>
+              seed={index}
+            ></feTurbulence>
             <feDisplacementMap
               id="displacement"
               in2="noise"
               in="SourceGraphic"
-              scale="4"></feDisplacementMap>
+              scale="4"
+            ></feDisplacementMap>
           </filter>
         ))}
       </defs>
