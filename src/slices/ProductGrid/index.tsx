@@ -21,17 +21,18 @@ const ProductGrid: FC<ProductGridProps> = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="bg-texure bg-brand-gray"
     >
-      <Heading className="text-center ~mb-4/6" as="h2">
+      <Heading className="text-center ~mb-4/6" as="div">
         <PrismicRichText field={slice.primary.heading} />
       </Heading>
       <div className="text-center ~mb-6/10">
         <PrismicRichText field={slice.primary.body} />
       </div>
-      {slice.primary.product.map(({skateboard}) => (
-        isFilled.contentRelationship(skateboard)&& (
-          <SkateBOardProduct key={skateboard.id} id={skateboard.id} />
-        )
-      ))}
+      {slice.primary.product.map(
+        ({ skateboard }) =>
+          isFilled.contentRelationship(skateboard) && (
+            <SkateBOardProduct key={skateboard.id} id={skateboard.id} />
+          )
+      )}
     </Bounded>
   );
 };
