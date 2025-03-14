@@ -1,9 +1,10 @@
 import { FC } from 'react';
-import { Content } from '@prismicio/client';
+import { Content, isFilled } from '@prismicio/client';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 import { Bounded } from '@/components/Bounded';
 import { PrismicNextLink } from '@prismicio/next';
 import { Heading } from '@/components/Heading';
+import { SkateBOardProduct } from './SkateBOardProduct';
 
 /**
  * Props for `ProductGrid`.
@@ -26,10 +27,10 @@ const ProductGrid: FC<ProductGridProps> = ({ slice }) => {
       <div className="text-center ~mb-6/10">
         <PrismicRichText field={slice.primary.body} />
       </div>
-      {slice.primary.product.map((item, index) => (
-        <PrismicNextLink key={index} field={item.skateboard}>
-          Link
-        </PrismicNextLink>
+      {slice.primary.product.map(({skateboard}) => (
+        isFilled.contentRelationship(skateboard)&& (
+          <SkateBOardProduct key={skateboard.id} id={skateboard.id} />
+        )
       ))}
     </Bounded>
   );
