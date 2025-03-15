@@ -2,7 +2,6 @@ import { FC } from 'react';
 import { Content, isFilled } from '@prismicio/client';
 import { PrismicRichText, SliceComponentProps } from '@prismicio/react';
 import { Bounded } from '@/components/Bounded';
-import { PrismicNextLink } from '@prismicio/next';
 import { Heading } from '@/components/Heading';
 import { SkateBOardProduct } from './SkateBOardProduct';
 
