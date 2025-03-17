@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+### Pet project SkateBoard Shop
 
-## Getting Started
+# Made with Next.js and Typescript
 
-First, run the development server:
+    This project is made for learning headless libraries such as Prismic.io that is used here.
+All the steps needed to maintain this projext will be described.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+At start explore the package.json file to ispect the commands that is used for development.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   1. "dev": "next dev --turbopack" - starting the development.
+   2. "build": "next build"  - creating optimized build.
+   3. "start": "next start" - starting the server and compling our pages on localhost.
+   4. "lint": "next lint" - linting the rules checking of problems, errors and warnings of our code.
+   5. "slice": "start-slicemachine" - starting local prismic.io machine to create optimised seo.
+   6 "format": "prettier --write ." - making sure that our code formated in manner that we provided.
