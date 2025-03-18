@@ -1,12 +1,21 @@
 import { ButtonLink } from '@/components/ButtonLink';
+import { HorizontalLine, VerticalLine } from '@/components/Line';
 import { createClient } from '@/prismicio';
 import { Content, isFilled } from '@prismicio/client';
 import { PrismicNextImage } from '@prismicio/next';
+import clsx from 'clsx';
 import { FaStar } from 'react-icons/fa6';
+import { Scribble } from './Scribble';
 
 type Props = {
   id: string;
 };
+
+const VERTICAL_LINE_CLASSES =
+  'absolute top-0 h-full stroke-2 text-stone-300 transition-colors group-hover:text-stone-400';
+const HORIZONTAL_LINE_CLASSES =
+  '-mx-8 stroke-2 text-stone-300 transition-colors group-hover:text-stone-400';
+
 export async function SkateBOardProduct({ id }: Props) {
   const client = createClient();
 
@@ -16,6 +25,10 @@ export async function SkateBOardProduct({ id }: Props) {
     : 'Price not awailable';
   return (
     <div className="group relative mx-auto w-full max-w-72 px-8 pt-4">
+      <VerticalLine className={clsx(VERTICAL_LINE_CLASSES, 'left-4')} />
+      <VerticalLine className={clsx(VERTICAL_LINE_CLASSES, 'right-4')} />
+      <HorizontalLine className={HORIZONTAL_LINE_CLASSES} />
+
       <div className="flex items-center justify-between ~text-sm/2xl">
         <span>{price}</span>
         <span className="inline-flex items-center gap-1">
@@ -23,6 +36,7 @@ export async function SkateBOardProduct({ id }: Props) {
         </span>
       </div>
       <div className="-mb-1 overflow-hidden py-4">
+        <Scribble color="red" className='absolute inset-0 h-full w-full'/>
         <PrismicNextImage
           alt=""
           field={product.data.image}
@@ -30,6 +44,7 @@ export async function SkateBOardProduct({ id }: Props) {
           className="mx-auto w-[58%] origin-top transform-gpu transition-transform duration-500 ease-in-out group-hover:scale-150"
         />
       </div>
+      <HorizontalLine className={HORIZONTAL_LINE_CLASSES} />
       <h3 className="my-2 text-center font-sans leading-tight ~text-lg/xl">
         {product.data.name}
       </h3>
