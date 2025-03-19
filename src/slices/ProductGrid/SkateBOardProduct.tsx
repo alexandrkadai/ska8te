@@ -36,7 +36,7 @@ export async function SkateBOardProduct({ id }: Props) {
         </span>
       </div>
       <div className="-mb-1 overflow-hidden py-4">
-        <Scribble color="red" className='absolute inset-0 h-full w-full'/>
+        <Scribble color="red" className="absolute inset-0 h-full w-full" />
         <PrismicNextImage
           alt=""
           field={product.data.image}

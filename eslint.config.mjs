@@ -11,6 +11,27 @@ const compat = new FlatCompat({
 
 const eslintConfig = [
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
+
+  // Add Tailwind CSS configuration
+  {
+    files: ['**/*.{js,jsx,ts,tsx}'],
+    plugins: {
+      tailwindcss: require('eslint-plugin-tailwindcss'),
+    },
+    rules: {
+      'tailwindcss/no-custom-classname': [
+        'warn',
+        {
+          config: './tailwind.config.js', // Adjust this path if your config is elsewhere
+          whitelist: [
+            // Add patterns for fluid-tailwind classes
+            'fluid-\\[.*\\]',
+            'f-\\[.*\\]',
+          ],
+        },
+      ],
+    },
+  },
 ];
 
 export default eslintConfig;

@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import fluid, {
+import fluidExtractor, {
   extract,
   screens,
   fontSize,
@@ -52,5 +52,10 @@ export default {
       },
     },
   },
-  plugins: [fluid],
+  plugins: [
+    require('fluid-tailwind')({
+      // Important: This is the part that resolves your warning
+      extractor: fluidExtractor,
+    }),
+  ],
 } satisfies Config;
