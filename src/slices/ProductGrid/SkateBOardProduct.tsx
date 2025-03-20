@@ -11,6 +11,18 @@ type Props = {
   id: string;
 };
 
+async function getDominantColor(url: string) {
+  const paletUrl = new URL(url);
+  paletUrl.searchParams.set('palette', 'json');
+
+  const res = await fetch(paletUrl);
+  const json = await res.json();
+
+  return (
+    json.dominant_colors.vibrant?.hex || json.dominant_colors.vibrant_light?.hex
+  );
+}
+
 const VERTICAL_LINE_CLASSES =
   'absolute top-0 h-full stroke-2 text-stone-300 transition-colors group-hover:text-stone-400';
 const HORIZONTAL_LINE_CLASSES =
@@ -23,6 +35,11 @@ export async function SkateBOardProduct({ id }: Props) {
   const price = isFilled.number(product.data.price)
     ? `$ ${(product.data.price / 100).toFixed(2)}`
     : 'Price not awailable';
+
+  const dominantColor = isFilled.image(product.data.image)
+    ? await getDominantColor(product.data.image.url)
+    : undefined;
+
   return (
     <div className="group relative mx-auto w-full max-w-72 px-8 pt-4">
       <VerticalLine className={clsx(VERTICAL_LINE_CLASSES, 'left-4')} />
@@ -36,7 +53,10 @@ export async function SkateBOardProduct({ id }: Props) {
         </span>
       </div>
       <div className="-mb-1 overflow-hidden py-4">
-        <Scribble color="red" className="absolute inset-0 h-full w-full" />
+        <Scribble
+          color={dominantColor}
+          className="absolute inset-0 h-full w-full"
+        />
         <PrismicNextImage
           alt=""
           field={product.data.image}
