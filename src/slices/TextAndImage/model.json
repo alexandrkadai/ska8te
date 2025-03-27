@@ -17,12 +17,7 @@
           "config": {
             "label": "Theme",
             "placeholder": "",
-            "options": [
-              "Blue",
-              "Orange",
-              "Navy",
-              "Lime"
-            ]
+            "options": ["Blue", "Orange", "Navy", "Lime"]
           }
         },
         "heading": {
@@ -86,12 +81,7 @@
           "config": {
             "label": "Theme",
             "placeholder": "",
-            "options": [
-              "Blue",
-              "Orange",
-              "Navy",
-              "Lime"
-            ]
+            "options": ["Blue", "Orange", "Navy", "Lime"]
           }
         },
         "heading": {
